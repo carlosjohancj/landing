@@ -7,7 +7,7 @@ import React from "react";
 type Feature = {
   text: string;
   included: boolean;
-};
+}
 
 type Plan = {
   name: string;
@@ -20,7 +20,7 @@ type Plan = {
   color: string;
 };
 
-export default function PricingCard({ isAnnual }: { isAnnual: boolean }) {
+export default function PricingCard() {
   const plans: Plan[] = [
     {
       name: "Starter",
@@ -93,10 +93,6 @@ export default function PricingCard({ isAnnual }: { isAnnual: boolean }) {
     }
   ];
 
-
-  const getPrice = (plan: Plan) => isAnnual ? plan.annualPrice : plan.monthlyPrice;
-  const getPeriod = () => isAnnual ? "/año" : "/mes";
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       {plans.map((plan, index) => (
@@ -137,12 +133,10 @@ export default function PricingCard({ isAnnual }: { isAnnual: boolean }) {
               
               <div className="mt-4">
                 <div className="flex items-baseline justify-center gap-2">
-                  <span className={`text-4xl font-bold ${
-                    plan.popular ? "text-white" : "text-gray-200"
-                  }`}>
-                    ${getPrice(plan)}
+                  <span className="text-4xl font-bold">
+                    ${plan.monthlyPrice}
                   </span>
-                  <span className="text-gray-400 text-sm">{getPeriod()}</span>
+                  <span className="text-gray-400 text-sm">/mes</span>
                 </div>
               </div>
             </CardHeader>

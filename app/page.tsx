@@ -265,7 +265,7 @@ export default function Home() {
                 Elige el plan perfecto para tu comunidad
               </p>
             </motion.div>
-            <PricingCard isAnnual={isAnnual} />
+            <PricingCard />
           </div>
         </section>
 
