@@ -5,7 +5,7 @@ import { useState } from "react";
 import PricingCard from "@/components/ui/pricingcard";
 
 export default function PricingPage() {
-  const [isAnnual, setIsAnnual] = useState(false);
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20">
@@ -25,29 +25,11 @@ export default function PricingPage() {
             actualizaciones gratuitas y soporte técnico.
           </p>
 
-          {/* Billing Toggle */}
-          <div className="flex items-center justify-center space-x-4">
-            <span className={`text-lg ${!isAnnual ? 'text-white' : 'text-gray-400'}`}>
-              Mensual
-            </span>
-            <Switch
-              checked={isAnnual}
-              onChange={() => setIsAnnual(!isAnnual)}
-              color="primary"
-            />
-            <span className={`text-lg ${isAnnual ? 'text-white' : 'text-gray-400'}`}>
-              Anual
-            </span>
-            {isAnnual && (
-              <Chip color="success" variant="flat" size="sm">
-                Ahorra 20%
-              </Chip>
-            )}
-          </div>
+   
         </motion.div>
 
         {/* Pricing Cards */}
-        <PricingCard isAnnual={isAnnual} setIsAnnual={setIsAnnual} />
+        <PricingCard />
         {/* FAQ Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

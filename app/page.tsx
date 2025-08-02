@@ -17,7 +17,7 @@ import PricingCard from "@/components/ui/pricingcard";
 import { useState } from "react";
 
 export default function Home() {
-  const [isAnnual, setIsAnnual] = useState(false);
+  
 
   const features = [
     {
