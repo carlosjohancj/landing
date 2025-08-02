@@ -9,7 +9,6 @@ import {
   Link,
   Button,
 } from "@heroui/react";
-import SwitchTheme from "./ui/switch-theme";
 import { FaRocket } from "react-icons/fa";
 
 export default function NavbarComponent() {
@@ -69,9 +68,6 @@ export default function NavbarComponent() {
           >
             Solicitar Demo
           </Button>
-        </NavbarItem>
-        <NavbarItem className="hidden">
-          <SwitchTheme />
         </NavbarItem>
       </NavbarContent>
 
