@@ -1,5 +1,5 @@
 'use client'
-import { Card, CardBody, CardHeader, Chip, Divider, Button } from "@heroui/react";
+import { Card, CardBody, CardHeader, Divider, Button } from "@heroui/react";
 import { motion } from "framer-motion";
 import { FaCheck, FaTimes, FaStar, FaRocket, FaCrown } from "react-icons/fa";
 
