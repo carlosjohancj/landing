@@ -2,9 +2,26 @@
 import { Card, CardBody, CardHeader, Divider, Button } from "@heroui/react";
 import { motion } from "framer-motion";
 import { FaCheck, FaTimes, FaStar, FaRocket, FaCrown } from "react-icons/fa";
+import React from "react";
 
-export default function PricingCard({ isAnnual, setIsAnnual }: { isAnnual: boolean, setIsAnnual: (v: boolean) => void }) {
- const plans = [
+type Feature = {
+  text: string;
+  included: boolean;
+};
+
+type Plan = {
+  name: string;
+  icon: React.ReactNode;
+  monthlyPrice: number;
+  annualPrice: number;
+  description: string;
+  features: Feature[];
+  popular: boolean;
+  color: string;
+};
+
+export default function PricingCard({ isAnnual }: { isAnnual: boolean }) {
+  const plans: Plan[] = [
     {
       name: "Starter",
       icon: <FaRocket className="text-2xl" />,
@@ -77,7 +94,7 @@ export default function PricingCard({ isAnnual, setIsAnnual }: { isAnnual: boole
   ];
 
 
-  const getPrice = (plan: any) => isAnnual ? plan.annualPrice : plan.monthlyPrice;
+  const getPrice = (plan: Plan) => isAnnual ? plan.annualPrice : plan.monthlyPrice;
   const getPeriod = () => isAnnual ? "/año" : "/mes";
 
   return (
