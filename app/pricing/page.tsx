@@ -1,8 +1,7 @@
 'use client';
-import { Button, Card, CardBody, CardHeader, Chip, Divider, Switch } from "@heroui/react";
+import { Button, Card, CardBody, Chip, Switch } from "@heroui/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FaCheck, FaTimes, FaStar, FaRocket, FaCrown } from "react-icons/fa";
 import PricingCard from "@/components/ui/pricingcard";
 
 export default function PricingPage() {
